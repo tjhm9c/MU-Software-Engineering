@@ -17,7 +17,7 @@ class Professor(Staff.Staff):
             assignments[key]['submission_date'] = "N/A"
             assignments[key]['submission'] = "N/A"
             assignments[key]['ontime'] = "N/A"
-            del assignments[key]['due_date']
+            assignments[key].pop('due_date', None)
         self.users[name]['courses'][course] = assignments
         self.update_user_db()
 
